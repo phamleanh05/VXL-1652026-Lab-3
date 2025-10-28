@@ -1,20 +1,23 @@
-13:23:55 **** Incremental Build of configuration Debug for project lab3 ****
+13:29:30 **** Incremental Build of configuration Debug for project lab3 ****
 make -j7 all 
-arm-none-eabi-gcc "../Core/Src/button.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/button.d" -MT"Core/Src/button.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/button.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "lab3.elf" @"objects.list"   -mcpu=cortex-m3 -T"/Users/admin/Documents/BK-University/VXL/LAB/VXL-1652026-Lab-3/lab3/STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lab3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: lab3.elf
  
 arm-none-eabi-size   lab3.elf 
 arm-none-eabi-objdump -h -S  lab3.elf  > "lab3.list"
+arm-none-eabi-objcopy  -O ihex  lab3.elf  "lab3.hex"
 arm-none-eabi-objcopy  -O binary  lab3.elf  "lab3.bin"
    text	   data	    bss	    dec	    hex	filename
-   7128	     20	   1692	   8840	   2288	lab3.elf
+   7356	     40	   1688	   9084	   237c	lab3.elf
 Finished building: default.size.stdout
  
 Finished building: lab3.bin
+Finished building: lab3.hex
+ 
  
 Finished building: lab3.list
  
 
-13:23:56 Build Finished. 0 errors, 0 warnings. (took 1s.122ms)
+13:29:31 Build Finished. 0 errors, 0 warnings. (took 1s.333ms)
 
