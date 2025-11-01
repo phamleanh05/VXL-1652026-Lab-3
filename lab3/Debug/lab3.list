@@ -229,8 +229,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  const int TIMER1 = 10;
- 800021c:	230a      	movs	r3, #10
+  const int TIMER1 = 100;
+ 800021c:	2364      	movs	r3, #100	; 0x64
  800021e:	607b      	str	r3, [r7, #4]
 //  const int TIMER2 = 10;
   setTimer1(TIMER1);
@@ -247,8 +247,8 @@ int main(void)
 		 setTimer1(TIMER1);
  800022e:	6878      	ldr	r0, [r7, #4]
  8000230:	f000 f918 	bl	8000464 <setTimer1>
-		 HAL_GPIO_TogglePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin);
- 8000234:	2101      	movs	r1, #1
+		 HAL_GPIO_TogglePin(LED_RED_2_GPIO_Port, LED_RED_2_Pin);
+ 8000234:	2108      	movs	r1, #8
  8000236:	4804      	ldr	r0, [pc, #16]	; (8000248 <main+0x48>)
  8000238:	f000 fd73 	bl	8000d22 <HAL_GPIO_TogglePin>
 	 if(timer1_flag == 1){

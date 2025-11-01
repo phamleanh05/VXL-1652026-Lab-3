@@ -95,7 +95,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  const int TIMER1 = 100;
+  const int TIMER1 = 10;
 //  const int TIMER2 = 10;
   setTimer1(TIMER1);
   while (1)
