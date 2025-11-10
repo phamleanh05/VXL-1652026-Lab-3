@@ -1,0 +1,31 @@
+/*
+ * display7segment.c
+ *
+ *  Created on: Nov 8, 2025
+ *      Author: ATPHOME
+ */
+#include "display7segment.h"
+
+void display7SEG_Mode(int num) {
+    if (num < 1 || num > 3) num = 1;
+    switch (num){
+    case 1:  // Hiển thị số 1: segment b,c sáng
+        HAL_GPIO_WritePin(GPIOA, SEG2_0_Pin | SEG2_3_Pin | SEG2_4_Pin | SEG2_5_Pin | SEG2_6_Pin, SET);
+        HAL_GPIO_WritePin(GPIOA, SEG2_1_Pin | SEG2_2_Pin, RESET);
+        break;
+
+    case 2:  // Hiển thị số 2: segment a,b,d,e,g sáng
+        HAL_GPIO_WritePin(GPIOA, SEG2_2_Pin | SEG2_5_Pin, SET);
+        HAL_GPIO_WritePin(GPIOA, SEG2_0_Pin | SEG2_1_Pin | SEG2_3_Pin | SEG2_4_Pin | SEG2_6_Pin, RESET);
+        break;
+
+    case 3:  // Hiển thị số 3: segment a,b,c,d,g sáng
+        HAL_GPIO_WritePin(GPIOA, SEG2_4_Pin | SEG2_5_Pin, SET);  // Tắt e,f
+        HAL_GPIO_WritePin(GPIOA, SEG2_0_Pin | SEG2_1_Pin | SEG2_2_Pin | SEG2_3_Pin | SEG2_6_Pin, RESET);  // Sáng a,b,c,d,g
+        break;
+
+    default:
+        break;
+    }
+}
+

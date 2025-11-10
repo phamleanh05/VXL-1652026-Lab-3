@@ -1,0 +1,15 @@
+/*
+ * fsm_automatic.c
+ *
+ *  Created on: Nov 7, 2025
+ *      Author: ATPHOME
+ */
+
+#include "fsm_automatic.h"
+
+void fsm_automatic_run(){
+	switch(status){
+	case AUTO_RED:
+		break;
+	}
+}

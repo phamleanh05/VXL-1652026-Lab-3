@@ -1,0 +1,42 @@
+/*
+ * global.h
+ *
+ *  Created on: Nov 7, 2025
+ *      Author: ATPHOME
+ */
+
+#ifndef INC_GLOBAL_H_
+#define INC_GLOBAL_H_
+
+#include "software_timer.h"
+#include "button.h"
+#include "main.h"
+
+#define MODE_1	1
+#define MODE_2	2
+#define MODE_3	3
+
+//#define RED_DURATION 14
+//#define YELLOW_DURATION 4
+//#define GREEN_DURATION 10
+
+extern int RED_DURATION;
+extern int YELLOW_DURATION;
+extern int GREEN_DURATION;
+
+extern int temp_red_time;
+extern int temp_green_time;
+extern int temp_yellow_time;
+
+#define RED 0
+#define YELLOW 1
+#define GREEN 2
+
+extern int mode;
+extern int switch_seg;
+extern int traffic_state1;
+extern int traffic_state2;
+extern int counter1;
+extern int counter2;
+
+#endif /* INC_GLOBAL_H_ */

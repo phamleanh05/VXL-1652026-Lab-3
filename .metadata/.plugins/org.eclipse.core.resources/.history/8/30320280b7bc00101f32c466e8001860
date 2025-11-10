@@ -1,0 +1,13 @@
+/*
+ * display7segment.h
+ *
+ *  Created on: Nov 8, 2025
+ *      Author: ATPHOME
+ */
+
+#ifndef INC_DISPLAY7SEGMENT_H_
+#define INC_DISPLAY7SEGMENT_H_
+
+void display7SEG_Mode();
+
+#endif /* INC_DISPLAY7SEGMENT_H_ */

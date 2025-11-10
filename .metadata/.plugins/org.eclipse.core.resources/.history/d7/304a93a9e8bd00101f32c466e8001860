@@ -1,0 +1,22 @@
+/*
+ * fsm_automatic.c
+ *
+ *  Created on: Nov 7, 2025
+ *      Author: ATPHOME
+ */
+
+#include "fsm_automatic.h"
+
+void fsm_mode(){
+	switch(mode){
+	case MODE_1:
+		trafficLightRun();
+		break;
+	case MODE_2:
+		display7SEG_Mode(MODE_2);
+		break;
+	case MODE_3:
+		display7SEG_Mode(MODE_3);
+		break;
+	}
+}

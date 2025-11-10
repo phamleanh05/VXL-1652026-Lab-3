@@ -1,0 +1,18 @@
+/*
+ * global.c
+ *
+ *  Created on: Nov 7, 2025
+ *      Author: ATPHOME
+ */
+#include "global.h"
+
+int mode = 0;
+
+int RED_DURATION = 15;
+int YELLOW_DURATION = 3;
+int GREEN_DURATION = 12;
+
+int traffic_state1 = RED;
+int traffic_state2 = GREEN;
+int switch_seg = 0;
+int temp_green_time = 12;

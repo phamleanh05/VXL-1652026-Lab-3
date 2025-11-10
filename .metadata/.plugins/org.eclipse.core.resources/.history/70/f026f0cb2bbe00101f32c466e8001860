@@ -1,0 +1,30 @@
+/*
+ * fsm_automatic.c
+ *
+ *  Created on: Nov 7, 2025
+ *      Author: ATPHOME
+ */
+
+#include "fsm_automatic.h"
+
+void fsm_mode(){
+	switch(mode){
+	case MODE_1:
+		trafficLightRun();
+		display7SEG_Mode(MODE_1);
+		break;
+	case MODE_2:
+	    HAL_GPIO_WritePin(GPIOA, EN0_Pin | EN1_Pin, SET);
+	    HAL_GPIO_WritePin(GPIOB, EN2_Pin | EN3_Pin, SET);
+		manualLight();
+		display7SEG_Mode(MODE_2);
+		break;
+	case MODE_3:
+		setTimeGreenLight();
+		display7SEG_Mode(MODE_3);
+		break;
+	default:
+		mode = MODE_1;
+		break;
+	}
+}

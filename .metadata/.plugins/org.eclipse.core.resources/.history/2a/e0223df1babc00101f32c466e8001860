@@ -1,0 +1,21 @@
+/*
+ * global.h
+ *
+ *  Created on: Nov 7, 2025
+ *      Author: ATPHOME
+ */
+
+#ifndef INC_GLOBAL_H_
+#define INC_GLOBAL_H_
+
+#include "software_timer.h"
+#include "button.h"
+#include "main.h"
+
+#define MODE_1	1
+#define MODE_2	2
+#define MODE_3	3
+
+extern int mode;
+
+#endif /* INC_GLOBAL_H_ */

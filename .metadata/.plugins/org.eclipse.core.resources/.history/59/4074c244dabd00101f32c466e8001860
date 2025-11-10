@@ -1,0 +1,73 @@
+/*
+ * traffic.h
+ *
+ *  Created on: Nov 8, 2025
+ *      Author: ATPHOME
+ */
+
+#ifndef INC_TRAFFICLIGHT_H_
+#define INC_TRAFFICLIGHT_H_
+
+#include "global.h"
+#include "software_timer.h"
+#include "display7segment.h"
+
+void setTrafficLight1(int state) {
+    switch (state) {
+	case RED:
+		HAL_GPIO_WritePin(GPIOA, LED_RED_1_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOA, LED_YELLOW_1_Pin | LED_GREEN_1_Pin, SET);
+		break;
+	case YELLOW:
+		HAL_GPIO_WritePin(GPIOA, LED_YELLOW_1_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOA, LED_RED_1_Pin | LED_GREEN_1_Pin, SET);
+		break;
+	case GREEN:
+		HAL_GPIO_WritePin(GPIOA, LED_GREEN_1_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOA, LED_RED_1_Pin | LED_YELLOW_1_Pin, SET);
+		break;
+    }
+}
+
+void setTrafficLight2(int state) {
+    switch (state) {
+	case RED:
+		HAL_GPIO_WritePin(GPIOA, LED_RED_2_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOA, LED_YELLOW_2_Pin | LED_GREEN_2_Pin, SET);
+		break;
+	case YELLOW:
+		HAL_GPIO_WritePin(GPIOA, LED_YELLOW_2_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOA, LED_RED_2_Pin | LED_GREEN_2_Pin, SET);
+		break;
+	case GREEN:
+		HAL_GPIO_WritePin(GPIOA, LED_GREEN_2_Pin, RESET);
+		HAL_GPIO_WritePin(GPIOA, LED_RED_2_Pin | LED_YELLOW_2_Pin, SET);
+		break;
+    }
+}
+
+void updateTrafficLights(int counter1, int state1, int counter2, int state2) {
+	setTrafficLight1(state1);
+	setTrafficLight2(state2);
+	display7SEG_traffic_light1(counter1);
+	display7SEG_traffic_light2(counter2);
+}
+
+int getNextState(int currentState) {
+    switch(currentState) {
+        case RED: return GREEN;
+        case GREEN: return YELLOW;
+        case YELLOW: return RED;
+        default: return RED;
+    }
+}
+
+int getDuration(int state) {
+    switch(state) {
+        case RED: return RED_DURATION;      // 9 seconds
+        case GREEN: return GREEN_DURATION;  // 7 seconds
+        case YELLOW: return YELLOW_DURATION; // 2 seconds
+        default: return RED_DURATION;
+    }
+}
+#endif /* INC_TRAFFICLIGHT_H_ */

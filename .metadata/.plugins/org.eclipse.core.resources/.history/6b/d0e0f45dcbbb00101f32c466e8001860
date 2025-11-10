@@ -1,0 +1,19 @@
+/*
+ * fsm_automatic.c
+ *
+ *  Created on: Nov 7, 2025
+ *      Author: ATPHOME
+ */
+
+#include "fsm_automatic.h"
+
+void fsm_automatic_run(){
+	switch(mode){
+	case MODE_1:
+		break;
+	case MODE_2:
+		break;
+	case MODE_3:
+		break;
+	}
+}

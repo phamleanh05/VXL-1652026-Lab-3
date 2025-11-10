@@ -1,0 +1,18 @@
+/*
+ * traffic.h
+ *
+ *  Created on: Nov 8, 2025
+ *      Author: ATPHOME
+ */
+
+#ifndef INC_TRAFFICLIGHT_H_
+#define INC_TRAFFICLIGHT_H_
+
+#include "global.h"
+#include "software_timer.h"
+#include "display7segment.h"
+
+void setTrafficLight1();
+void setTrafficLight2();
+
+#endif /* INC_TRAFFICLIGHT_H_ */

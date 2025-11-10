@@ -1,0 +1,9 @@
+/*
+ * global.c
+ *
+ *  Created on: Nov 7, 2025
+ *      Author: ATPHOME
+ */
+#include "global.h"
+
+int mode = 0;
